@@ -128,7 +128,7 @@ public class UserRepository {
             String inPass = generateSecurePassword(pass);
             // Let's iterate through the java ResultSet
             while (rs.next()) {
-                if (user.equals(rs.getString("name")) && rs.getString("password").equals(inPass)) {
+                if (user.equals(rs.getString("username")) && rs.getString("password").equals(inPass)) {
                     flag = true;
                     break;
                 }

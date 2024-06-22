@@ -24,7 +24,7 @@ public class RegisterController {
     @FXML
     public PasswordField rePasswordField;
 
-    private void dialogue(String headerMsg, String contentMsg) {
+    public static void dialogue(String headerMsg, String contentMsg) {
         Stage secondaryStage = new Stage();
         Group root = new Group();
         Scene scene = new Scene(root, 300, 300, Color.DARKGRAY);
@@ -48,12 +48,12 @@ public class RegisterController {
                 myObj.addDataToDB(userTextField.getText(), passwordField.getText());
                 dialogue("Adding information to the database", "Successful!");
                 String[] credentials = {userTextField.getText(), passwordField.getText()};
-                loader.setLocation(getClass().getResource("secondary.fxml"));
+                loader.setLocation(getClass().getResource("home-view.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root, 640, 480);
                 secondaryStage.setScene(scene);
 //                SecondaryController controller = loader.getController();
-//                secondaryStage.setTitle("Show all records");
+                secondaryStage.setTitle("Show all records");
 //                controller.initialise(credentials);
 //                String msg = "some data sent from Register Controller";
 //                secondaryStage.setUserData(msg);
